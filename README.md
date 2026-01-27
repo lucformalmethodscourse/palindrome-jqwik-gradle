@@ -27,8 +27,8 @@ For full credit, the various palindrome checkers should meet the following nonfu
 In addition, the project must meet these NFRs:
 
 - multiple git commits
-- unchanged Maven-based project structure and dependencies (you may add additional useful dependencies)
-- compiles and runs (main and tests) using mvn
+- unchanged Gradle-based project structure and dependencies (you may add additional useful dependencies)
+- compiles and runs (main and tests) using Gradle
 
 
 ## Running the main program
@@ -36,7 +36,7 @@ In addition, the project must meet these NFRs:
 The main program checks whether the command-line arguments form a palindrome, defined as a string that reads the same way forward and backward, possibly considering or ignoring case and/or spaces. 
 When inspecting the main method, you'll see that it concatenates the command-line arguments to a single string with spaces in between.
 
-    ❯ mvn compile exec:java -Dexec.args="Rad a r"
+    ❯ ./gradlew run --args="Rad a r"
     checking Rad a r
     Rad a r is not a palindrome.
     Rad a r is not a case-sensitive palindrome.
@@ -47,18 +47,18 @@ When inspecting the main method, you'll see that it concatenates the command-lin
 
 You can run all the tests
 
-    ❯ mvn test
+    ❯ ./gradlew test
 
 or a specific test or single test method, which is recommended while you're focusing on each specific part of the project
 
-    ❯ mvn test -Dtest=TestPalindromeExamples
+    ❯ ./gradlew test --tests TestPalindromeExamples
 
-    ❯ mvn test -Dtest=TestPalindromeExamples#testRadar
+    ❯ ./gradlew test --tests TestPalindromeExamples.testRadar
     
 
 You can generate the coverage report using
 
-    ❯ mvn jacoco:report
+    ❯ ./gradlew jacocoTestReport
 
 
 ## Written part
